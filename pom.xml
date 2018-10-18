@@ -16,13 +16,19 @@
     </modules>
     <properties>
         <apache.freemarker.version>2.3.28</apache.freemarker.version>
+        <json-lib.version>2.4</json-lib.version>
     </properties>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.freemarker</groupId>
                 <artifactId>freemarker</artifactId>
-                <version>apache.freemarker.version</version>
+                <version>${apache.freemarker.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.json-lib</groupId>
+                <artifactId>json-lib</artifactId>
+                <version>${json-lib.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
