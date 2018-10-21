@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>wa.jh</groupId>
-    <artifactId>wa.jh</artifactId>
+    <artifactId>suloova</artifactId>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
     <modules>
         <module>provider</module>
         <module>biz</module>
@@ -16,10 +16,19 @@
     </modules>
     <properties>
         <apache.freemarker.version>2.3.28</apache.freemarker.version>
+        <spring-framework.version>5.0.8.RELEASE</spring-framework.version>
         <json-lib.version>2.4</json-lib.version>
+        <dubbo.version>2.6.2</dubbo.version>
+        <zkclient.version>0.10</zkclient.version>
+        <suloova.version>1.0-SNAPSHOT</suloova.version>
     </properties>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>wa.jh</groupId>
+                <artifactId>suloova-api</artifactId>
+                <version>${suloova.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.freemarker</groupId>
                 <artifactId>freemarker</artifactId>
@@ -29,6 +38,27 @@
                 <groupId>net.sf.json-lib</groupId>
                 <artifactId>json-lib</artifactId>
                 <version>${json-lib.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring-framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>spring</artifactId>
+                        <groupId>org.springframework</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.101tec</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>${zkclient.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
